@@ -1,0 +1,133 @@
+.info {
+    float: right;
+    &:not(:hover):not(:focus) .callout {
+        visibility: hidden;
+    }
+    .callout {
+        font-family: "-apple-system",BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Ubuntu,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+        color: black;
+        border: solid 2px #eaeaea;
+        text-align: center;
+        position: absolute;
+        z-index: 1;
+        top: 1em;
+        right: 0px;
+        max-width: 100%;
+        margin-left: -100px;
+        background-color: white;
+        padding: 8px;
+        .message {
+            margin-bottom: 10px;
+        }
+    }
+}
+.main-content {
+    #attachment-container {
+        padding: 5px;
+    }
+    #attachment-container .file-thumbnails {
+        display: flex;
+        flex-wrap: wrap;
+        min-height: 78px;
+        &.dropping-files {
+            background-color: aliceblue;
+        }
+        .thumbnail-tile {
+            margin: 5px;
+            padding: 5px;
+            border: 1px solid transparent;
+            text-decoration: none;
+            height: 130px;
+            position: relative;
+            &:focus, &.selected {
+                background-color: #cfe9ff;
+            }
+            &:hover {
+                border: 1px solid black;
+            }
+            &:not(:hover) {
+                .title .delete-button {
+                    display: none;
+                }
+                .options {
+                    visibility: hidden;
+                }
+            }
+            .options {
+                position: absolute;
+                background-color: white;
+                top: 0px;
+                right: 0px;
+                .ms-Button-menuIcon {
+                    display: none;
+                }
+                &:focus {
+                    border: 1px solid black;
+                }
+                &:hover {
+                    background-color: aliceblue;
+                }
+            }
+            .thumb-box {
+                width: 100px;
+                height: 100px;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+                position: relative;
+                .thumbnail.image {
+                    max-width: 100px;
+                    max-height: 100px;
+                    &.preview {
+                        background-image: url('../img/checkerboard.png');
+                    }
+                }
+                .thumbnail.file {
+                    color: black;
+                    font-size: 95px;
+                }
+                .overlay {
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    font-size: 95px;
+                    color: white;
+                    text-shadow:
+                    -1px -1px 0 #000,
+                    1px -1px 0 #000,
+                    -1px 1px 0 #000,
+                    1px 1px 0 #000;
+                }
+            }
+            .title {
+                .text {
+                    width: 100px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        .add-image {
+            .file-input {
+                display: none;
+            }
+            .add-button {
+                border: 1px solid transparent;
+                margin-top: 5px;
+                &:focus {
+                    background-color: aliceblue;
+                }
+                &:hover {
+                    border: 1px solid black;
+                }
+            }
+        }
+    }
+    .error-message {
+        color: red;
+    }
+}

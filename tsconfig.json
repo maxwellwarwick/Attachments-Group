@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "module": "amd",
+        "target": "es5",
+        "sourceMap": true,
+        "rootDir": "./scripts",
+        "moduleResolution": "node",
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "strictNullChecks": true,
+        "noImplicitThis": true,
+        "alwaysStrict": true,
+        "jsx": "react",
+        "lib": [
+            "es2015.promise",
+            "dom",
+            "es5"
+        ],
+        "experimentalDecorators": true
+    }
+}

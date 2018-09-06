@@ -1,0 +1,85 @@
+{
+    "manifestVersion": 1,
+    "id": "attachments-group",
+    "version": "1.2.40",
+    "name": "Attachments Group",
+    "scopes": [ "vso.work", "vso.work_write" ],
+    "description": "Preview image attachments from the work item form",
+    "publisher": "ottostreifel",
+    "icons": {
+        "default": "img/logo.png"
+    },
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "tags": [
+        "Work Item",
+        "Group",
+        "Productivity",
+        "File",
+        "Image",
+        "Attachment",
+        "Form"
+    ],
+    "content": {
+        "details": {
+            "path": "details.md"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/ostreifel/Attachments-Group"
+    },
+    "branding": {
+        "color": "rgb(220, 235, 252)",
+        "theme": "light"
+    },
+    "files": [
+        {
+            "path": "img",
+            "addressable": true
+        },
+        {
+            "path": "dist",
+            "addressable": true
+        },
+        {
+            "path": "attachmentGroup.html",
+            "addressable": true
+        },
+        {
+            "path": "imageGallery.html",
+            "addressable": true
+        }
+    ],
+    "categories": [
+        "Plan and track"
+    ],
+    "contributions": [
+        {
+            "id": "attachments-group",
+            "type": "ms.vss-work-web.work-item-form-group",
+            "description": "Show attachments associated with the current workitem",
+            "targets": [
+                "ms.vss-work-web.work-item-form"
+            ],
+            "properties": {
+                "name": "Attachments",
+                "uri": "attachmentGroup.html",
+                "height": 78
+            }
+        },
+        {
+            "id": "imageGallery",
+            "type": "ms.vss-web.control",
+            "description": "Image gallery",
+            "targets": [ ],
+            "properties": {
+                "uri": "imageGallery.html",
+                "registeredObjectId": "dialogCallbacks"
+            }
+        }
+    ]
+}
