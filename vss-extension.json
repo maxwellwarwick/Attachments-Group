@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "attachments-group",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "Attachments Group",
     "scopes": [ "vso.work", "vso.work_write" ],
     "description": "Preview image attachments from the work item form",
@@ -30,7 +30,7 @@
     },
     "repository": {
         "type": "git",
-        "uri": "http://alm-tfs:8080/tfs/IRCC/ALM/_git/attachments-group-extension"
+        "uri": "https://alm-tfs.apps.ci.gc.ca/tfs/IRCC/ALM/_git/attachments-group-extension"
     },
     "branding": {
         "color": "rgb(220, 235, 252)",
