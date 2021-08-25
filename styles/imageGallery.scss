@@ -1,3 +1,4 @@
+@import "colors";
 .gallery-body {
     position: absolute;
     top: 0;
@@ -8,20 +9,19 @@
         height: 100%;
     }
     .gallery {
-        border: 1px solid black;
         margin: 5px;
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        background: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include background-color(white);
         height: 100%;
         .center {
-            color: white;
-            border: 1px solid gray;
+            @include color(black);
+            @include border(1px, solid, gray);
             max-height: 100%;
             max-width: calc(100% - 120px);
             &:focus {
-                outline: 2px solid white;
+                @include outline(2px, solid, black);
             }
             &.image {
                 background-image: url('../img/checkerboard.png');
@@ -33,13 +33,13 @@
             &.text {
                 height: 100%;
                 width: calc(100% - 120px);
-                background-color: white;
-                color: black;
+                @include background-color(white);
+                @include color(black);
                 white-space: pre-wrap;
                 word-break: break-word;
                 overflow-y: auto;
                 &.loading {
-                    background-color: lightgray;
+                    @include background-color(lightgray);
                 }
             }
         }
@@ -52,14 +52,14 @@
             height: 100%;
             align-items: center;
             &:focus {
-                outline: 2px solid white;
+                @include outline(2px, solid, black);
             }
             .chevron-button {
-                color: white;
+                @include color(black);
                 font-size: 50px;
             }
             &:hover .chevron-button {
-                color: lightgray;
+                @include color(darkgray);
             }
         }
     }

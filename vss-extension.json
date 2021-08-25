@@ -1,11 +1,11 @@
 {
     "manifestVersion": 1,
     "id": "attachments-group",
-    "version": "1.0.1",
+    "version": "1.2.82",
     "name": "Attachments Group",
     "scopes": [ "vso.work", "vso.work_write" ],
     "description": "Preview image attachments from the work item form",
-    "publisher": "ca-ircc",
+    "publisher": "ottostreifel",
     "icons": {
         "default": "img/logo.png"
     },
@@ -30,7 +30,7 @@
     },
     "repository": {
         "type": "git",
-        "uri": "https://alm-tfs.apps.ci.gc.ca/tfs/IRCC/ALM/_git/attachments-group-extension"
+        "uri": "https://github.com/ostreifel/Attachments-Group"
     },
     "branding": {
         "color": "rgb(220, 235, 252)",
@@ -47,13 +47,11 @@
         },
         {
             "path": "attachmentGroup.html",
-            "addressable": true,
-            "contentType": "text/html"
+            "addressable": true
         },
         {
             "path": "imageGallery.html",
-            "addressable": true,
-            "contentType": "text/html"
+            "addressable": true
         }
     ],
     "categories": [
@@ -69,7 +67,7 @@
             ],
             "properties": {
                 "name": "Attachments",
-                "uri": "attachmentGroup.html",
+                "uri": "dist/attachmentGroup.html",
                 "height": 78
             }
         },
@@ -79,7 +77,7 @@
             "description": "Image gallery",
             "targets": [ ],
             "properties": {
-                "uri": "imageGallery.html",
+                "uri": "dist/imageGallery.html",
                 "registeredObjectId": "dialogCallbacks"
             }
         }

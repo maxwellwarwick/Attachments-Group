@@ -234,10 +234,16 @@ export class FileThumbNail extends React.Component<IFileThumbNailProps, {}> {
                 link.focus();
             } else {
                 setStatus("downloading files...");
+<<<<<<< HEAD
                 const navigationService = await VSS.getService(VSS.ServiceIds.Navigation) as HostNavigationService;
                 trackEvent("download", {trigger: e.type, forceDownload: !!forceDownload + "", ...getProps(selected)});
                 for (const file of selected) {
                     navigationService.openNewWindow(getFileUrl(file, !!forceDownload), "");
+=======
+                trackEvent("download", {trigger: e.type, forceDownload: !!forceDownload + "", ...getProps(selected)});
+                for (const file of selected) {
+                    window.open(getFileUrl(file, !!forceDownload), "_blank");
+>>>>>>> 54e43f7411d2440e46232f56f5d06e365aac40a8
                 }
             }
         });

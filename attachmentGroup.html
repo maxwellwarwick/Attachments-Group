@@ -6,13 +6,14 @@
     <script src="dist/VSS.SDK.min.js"></script>
     <script src="https://www.promisejs.org/polyfills/promise-6.1.0.js"></script>
     <link href="dist/attachmentGroup.css" rel="stylesheet" />
+
 </head>
 <body>
     <script type="text/javascript">
         var appInsights=window.appInsights||function(a){
             function b(a){c[a]=function(){var b=arguments;c.queue.push(function(){c[a].apply(c,b)})}}var c={config:a},d=document,e=window;setTimeout(function(){var b=d.createElement("script");b.src=a.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js",d.getElementsByTagName("script")[0].parentNode.appendChild(b)});try{c.cookie=d.cookie}catch(a){}c.queue=[];for(var f=["Event","Exception","Metric","PageView","Trace","Dependency"];f.length;)b("track"+f.pop());if(b("setAuthenticatedUserContext"),b("clearAuthenticatedUserContext"),b("startTrackEvent"),b("stopTrackEvent"),b("startTrackPage"),b("stopTrackPage"),b("flush"),!a.disableExceptionTracking){f="onerror",b("_"+f);var g=e[f];e[f]=function(a,b,d,e,h){var i=g&&g(a,b,d,e,h);return!0!==i&&c["_"+f](a,b,d,e,h),i}}return c
         }({
-            instrumentationKey:"c7ed28df-f0f9-4884-a793-45b18fe67b30",
+            instrumentationKey:"a99dc500-d43d-4e8d-a585-e40b366e5795",
             disableAjaxTracking: true,
             isPerfAnalyzerEnabled: false,
         });
@@ -21,15 +22,35 @@
         VSS.init({
             explicitNotifyLoaded: true,
             usePlatformScripts: true,
-            configureModuleLoader: true
+            configureModuleLoader: true,
+            applyTheme: true,
         });
         
         // Load main entry point for extension
-        VSS.require(["dist/registerAttachmentGroup"], function () {
+        VSS.require([
+            "react",
+            "react-dom",
+            "TFS/WorkItemTracking/Contracts",
+            "TFS/WorkItemTracking/RestClient",
+            "VSS/Utils/Core",
+            "VSS/Utils/UI",
+            "VSS/Utils/Date",
+            "VSS/WebApi/Contracts",
+            "TFS/WorkItemTracking/Services",
+            "TFS/WorkItemTracking/ExtensionContracts",
+            "dist/registerAttachmentGroup"
+        ], function () {
             // Loading succeeded
             VSS.notifyLoadSucceeded();
         });
     </script>
+    <span class="bowtie-icon bowtie-status-info info" tabindex="0">
+            <div class="callout">
+                <div class="message">Thank you for using the Attachments Group Extension!</div>
+                <a href="https://marketplace.visualstudio.com/items?itemName=ottostreifel.attachments-group#review-details" target="_blank">Write a review</a>
+                | <a href="https://github.com/ostreifel/Attachments-Group/issues" target="_blank">Report an issue</a>
+            </div>
+    </span>
     <div class="main-content">
         <div id="attachment-container"></div>
         <div class="status-message"></div>
